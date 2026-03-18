@@ -1,0 +1,2 @@
+12_金融风控-贷款违约预测/processs_datas/train_process_datas_x.csv filter=lfs diff=lfs merge=lfs -text
+12_金融风控-贷款违约预测/datas/train.csv filter=lfs diff=lfs merge=lfs -text
