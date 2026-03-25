@@ -15,7 +15,7 @@ import matplotlib as mpt
 import sys
 
 # 加载数据
-data = pd.read_csv('./datas/boston_housing.data', sep='\s+', header=None)
+data = pd.read_csv('boston_housing.data', sep='\s+', header=None)
 
 # 获取特征属性X和目标属性Y
 X = data.iloc[:, :-1]

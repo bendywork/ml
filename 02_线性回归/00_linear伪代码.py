@@ -15,9 +15,9 @@ class Linear:
     def train(self, X, Y):
         if self.b:
             X = np.column_stack((np.ones_like(X), X))
-        # 二、为了求解比较方便，将numpy的'numpy.ndarray'的数据类型转换为矩阵的形式的。
-        X = np.mat(X)
-        Y = np.mat(Y)
+        # 二、为了求解比较方便，将numpy的'numpy.ndarray'的数据类型转换为矩阵的形式的。 仅在二维处理数据
+        X = np.asmatrix(X)
+        Y = np.asmatrix(Y)
         # 三、根据解析式的公式求解theta的值
         theta = (X.T * X).I * X.T * Y
         if self.b:

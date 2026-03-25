@@ -24,12 +24,16 @@ X1 = np.array([
     [60, 1],
     [60, 2],
     [70, 2]]).reshape((-1, 2))
+print(X1)
 Y = np.array([0.8, 1.0, 1.8, 2.0, 3.2, 3.0, 3.1, 3.5]).reshape((-1, 1))
 
 if flag:
     # 添加一个截距项对应的X值
     X = np.column_stack((X1, np.ones(shape=(X1.shape[0], 1))))
+    # print(np.column_stack((X1, np.ones_like(X1[:,0]))))
     # X = np.hstack((X1,np.ones(shape=(X1.shape[0], 1))))
+    # print("---"*20)
+    # print("X:",X)
 else:
     # 不加入截距项
     X = X1
@@ -37,8 +41,8 @@ print(X)
 # print(Y)
 
 # 二、为了求解比较方便，将numpy的'numpy.ndarray'的数据类型转换为矩阵的形式的。
-X = np.mat(X)
-Y = np.mat(Y)
+X = np.asmatrix(X)
+Y = np.asmatrix(Y)
 
 # 三、根据解析式的公式求解theta的值
 theta = (X.T * X).I * X.T * Y

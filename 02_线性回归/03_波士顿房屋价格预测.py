@@ -13,7 +13,7 @@ import matplotlib.pyplot as plt
 import matplotlib as mpt
 
 # 加载数据
-data = pd.read_csv('./datas/boston_housing.data', sep='\s+', header=None)
+data = pd.read_csv('boston_housing.data', sep='\s+', header=None)
 
 # 数据预处理
 
