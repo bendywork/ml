@@ -1,3 +1,5 @@
+import platform
+
 import pandas as pd
 import numpy as np
 from sklearn.linear_model import LogisticRegression
@@ -8,11 +10,18 @@ import matplotlib as mpl
 import sys
 
 ## 设置字符集，防止中文乱码
-mpl.rcParams['font.sans-serif'] = [u'simHei']
-mpl.rcParams['axes.unicode_minus'] = False
+# 设置字符集，防止中文乱码 - 根据操作系统选择字体
+system_name = platform.system()
+if system_name == 'Darwin':  # macOS
+    mpl.rcParams['font.sans-serif'] = ['Arial Unicode MS', 'PingFang SC', 'Heiti TC']
+elif system_name == 'Windows':
+    mpl.rcParams['font.sans-serif'] = [u'simHei']
+else:  # Linux
+    mpl.rcParams['font.sans-serif'] = ['WenQuanYi Micro Hei', 'Droid Sans Fallback']
 
+mpl.rcParams['axes.unicode_minus'] = False
 ##读取数据
-a = pd.read_csv('./datas/breast-cancer-wisconsin.data', header=None)
+a = pd.read_csv('../datas/breast-cancer-wisconsin.data', header=None)
 # print(a.head())
 # print(a.info())
 # sys.exit(0)
